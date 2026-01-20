@@ -4,8 +4,9 @@ public class Calculator {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        int choice;
+        try(Scanner sc = new Scanner(System.in))
+        {
+            int choice;
         double num1, num2;
 
         System.out.println("===== SIMPLE CALCULATOR =====");
@@ -29,22 +30,16 @@ public class Calculator {
                 num2 = sc.nextDouble();
 
                 switch (choice) {
-                    case 1:
-                        System.out.println("Result = " + (num1 + num2));
-                        break;
-                    case 2:
-                        System.out.println("Result = " + (num1 - num2));
-                        break;
-                    case 3:
-                        System.out.println("Result = " + (num1 * num2));
-                        break;
-                    case 4:
+                    case 1 -> System.out.println("Result = " + (num1 + num2));
+                    case 2 -> System.out.println("Result = " + (num1 - num2));
+                    case 3 -> System.out.println("Result = " + (num1 * num2));
+                    case 4 -> {
                         if (num2 != 0) {
                             System.out.println("Result = " + (num1 / num2));
                         } else {
                             System.out.println("Error: Division by zero!");
                         }
-                        break;
+                    }
                 }
             } else if (choice != 5) {
                 System.out.println("Invalid choice! Try again.");
@@ -54,5 +49,6 @@ public class Calculator {
 
         System.out.println("Calculator closed. Thank you!");
         sc.close();
+    }
     }
 }
