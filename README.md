@@ -1,4 +1,4 @@
-# DAY 1 Simple Calculator (Java)
+# Simple Calculator (Java)
 
 ## 📌 Problem Statement
 A console-based calculator application built using Java that performs basic arithmetic operations.
